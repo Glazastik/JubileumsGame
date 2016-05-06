@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour {
         float moveHorizontal = Input.GetAxis("Horizontal");
         Vector2 movement = new Vector2(moveHorizontal, 0);
         rb2d.AddForce(movement.normalized * speed * Time.fixedDeltaTime);
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetButtonDown("Jump"))
         {
             rb2d.AddForce(new Vector2(0, 100));
         }
