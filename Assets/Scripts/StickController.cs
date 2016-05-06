@@ -15,7 +15,7 @@ public class StickController : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
         float moveHorizontal = Input.GetAxis("Horizontal");
         Vector2 movement = new Vector2(moveHorizontal, 0);
 
@@ -33,7 +33,7 @@ public class StickController : MonoBehaviour {
             anim.SetInteger("state", 1);
         }
 
-        rb2d.AddForce(movement.normalized * speed * Time.fixedDeltaTime);
+        rb2d.AddForce(movement.normalized * speed);
         if (Input.GetButtonDown("Jump"))
         {
             rb2d.AddForce(new Vector2(0, jumpForce));
