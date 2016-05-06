@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour {
 	}
 	
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         float moveHorizontal = Input.GetAxis("Horizontal");
         Vector2 movement = new Vector2(moveHorizontal, 0);
