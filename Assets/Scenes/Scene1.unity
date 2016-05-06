@@ -96,6 +96,7 @@ GameObject:
   - 212: {fileID: 1128592037}
   - 50: {fileID: 1128592039}
   - 61: {fileID: 1128592040}
+  - 114: {fileID: 1128592041}
   m_Layer: 0
   m_Name: dude
   m_TagString: Untagged
@@ -176,6 +177,18 @@ BoxCollider2D:
   m_Offset: {x: 0, y: -0.02}
   serializedVersion: 2
   m_Size: {x: 0.15, y: 0.25}
+--- !u!114 &1128592041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1128592036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6dd4f1d02e027c4c92e27fa8ed18e88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 25
 --- !u!1 &1206073498
 GameObject:
   m_ObjectHideFlags: 0
