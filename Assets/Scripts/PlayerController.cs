@@ -22,4 +22,6 @@ public class PlayerController : MonoBehaviour {
             rb2d.AddForce(new Vector2(0, 100));
         }
     }
+
+
 }

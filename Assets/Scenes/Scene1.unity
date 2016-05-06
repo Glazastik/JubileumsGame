@@ -181,6 +181,7 @@ GameObject:
   - 95: {fileID: 763897978}
   - 114: {fileID: 763897981}
   - 50: {fileID: 763897982}
+  - 61: {fileID: 763897983}
   m_Layer: 0
   m_Name: Sprite-0004_0
   m_TagString: Untagged
@@ -243,7 +244,7 @@ Transform:
   m_GameObject: {fileID: 763897977}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.3867705, y: -0.5417588, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 10
@@ -276,6 +277,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!61 &763897983
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 763897977}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 0.29, y: 0.68}
 --- !u!1001 &953721657
 Prefab:
   m_ObjectHideFlags: 0
@@ -450,6 +465,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1206073500}
   - 212: {fileID: 1206073499}
+  - 95: {fileID: 1206073502}
   m_Layer: 0
   m_Name: bg1
   m_TagString: Untagged
@@ -499,6 +515,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
+--- !u!95 &1206073502
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1206073498}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8a2a6492b445a5c43a148765574e222b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &1357765089
 GameObject:
   m_ObjectHideFlags: 0

@@ -4,7 +4,7 @@ using System.Collections;
 public class StickController : MonoBehaviour {
 
     private Animator anim;
-    private string direction = "right";
+    private bool facingRight = true;
     private Rigidbody2D rb2d;
     public int speed;
 	// Use this for initialization
@@ -17,10 +17,33 @@ public class StickController : MonoBehaviour {
 	void Update () {
         float moveHorizontal = Input.GetAxis("Horizontal");
         Vector2 movement = new Vector2(moveHorizontal, 0);
+
+        if ((moveHorizontal < 0 && facingRight) || (moveHorizontal > 0 && !facingRight))
+        {
+            Flip();
+        }
+
+        if (moveHorizontal == 0)
+        {
+            anim.SetInteger("state", 0);
+        }
+        else
+        {
+            anim.SetInteger("state", 1);
+        }
+
         rb2d.AddForce(movement.normalized * speed * Time.fixedDeltaTime);
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetButtonDown("Jump"))
         {
             rb2d.AddForce(new Vector2(0, 100));
         }
 	}
+
+    void Flip()
+    {
+        facingRight = !facingRight;
+        Vector3 theScale = transform.localScale;
+        theScale.x *= -1;
+        transform.localScale = theScale;
+    }
 }
