@@ -95,6 +95,7 @@ GameObject:
   - 4: {fileID: 1128592038}
   - 212: {fileID: 1128592037}
   - 50: {fileID: 1128592039}
+  - 61: {fileID: 1128592040}
   m_Layer: 0
   m_Name: dude
   m_TagString: Untagged
@@ -140,7 +141,7 @@ Transform:
   m_GameObject: {fileID: 1128592036}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -1.56, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 10, y: 10, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -161,6 +162,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!61 &1128592040
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1128592036}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: -0.02}
+  serializedVersion: 2
+  m_Size: {x: 0.15, y: 0.25}
 --- !u!1 &1206073498
 GameObject:
   m_ObjectHideFlags: 0
@@ -316,7 +331,7 @@ GameObject:
   - 212: {fileID: 1692799988}
   - 61: {fileID: 1692799987}
   m_Layer: 0
-  m_Name: New Sprite
+  m_Name: Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
