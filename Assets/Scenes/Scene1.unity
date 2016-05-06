@@ -227,6 +227,7 @@ GameObject:
   - 50: {fileID: 1128592039}
   - 61: {fileID: 1128592040}
   - 114: {fileID: 1128592041}
+  - 58: {fileID: 1128592042}
   m_Layer: 0
   m_Name: dude
   m_TagString: Untagged
@@ -319,6 +320,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1400
+--- !u!58 &1128592042
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1128592036}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: -0.12}
+  serializedVersion: 2
+  m_Radius: 0.0340024
 --- !u!1 &1206073498
 GameObject:
   m_ObjectHideFlags: 0
