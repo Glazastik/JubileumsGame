@@ -60,7 +60,7 @@ GameObject:
   - 50: {fileID: 5050202}
   - 61: {fileID: 6112934}
   m_Layer: 0
-  m_Name: TBlock 1
+  m_Name: TBlock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

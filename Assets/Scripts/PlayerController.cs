@@ -17,6 +17,6 @@ public class PlayerController : MonoBehaviour {
     {
         float moveHorizontal = Input.GetAxis("Horizontal");
         Vector2 movement = new Vector2(moveHorizontal, 0);
-        rb2d.AddForce(movement.normalized * speed);
+        rb2d.AddForce(movement.normalized * speed * Time.deltaTime);
     }
 }
