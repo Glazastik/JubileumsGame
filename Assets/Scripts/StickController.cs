@@ -7,6 +7,7 @@ public class StickController : MonoBehaviour {
     private bool facingRight = true;
     private Rigidbody2D rb2d;
     public int speed;
+    public int jumpForce = 200;
 	// Use this for initialization
 	void Start () {
         anim = this.GetComponent<Animator>();
@@ -35,7 +36,7 @@ public class StickController : MonoBehaviour {
         rb2d.AddForce(movement.normalized * speed * Time.fixedDeltaTime);
         if (Input.GetButtonDown("Jump"))
         {
-            rb2d.AddForce(new Vector2(0, 100));
+            rb2d.AddForce(new Vector2(0, jumpForce));
         }
 	}
 
