@@ -29,7 +29,7 @@ GameObject:
   - 50: {fileID: 5071566}
   - 61: {fileID: 6182618}
   m_Layer: 0
-  m_Name: Stickman 1
+  m_Name: Stickman
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -148,6 +148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.25
+  player: 0
   jumpForce: 7
 --- !u!212 &21211366
 SpriteRenderer:
