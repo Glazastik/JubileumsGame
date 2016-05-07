@@ -40,6 +40,7 @@ public class StickController : MonoBehaviour {
         if (grounded && headCollision)
         {
             dead = true;
+            anim.SetBool("Dead", true);
         }
 
         float moveHorizontal = 0f;
