@@ -5,12 +5,14 @@ public class BlockSpawner : MonoBehaviour {
 
     public Transform[] block;
     private Transform chosenBlock;
-    public int spawnDelay;
+    public int initSpawnDelay;
+    private int spawnDelay;
     private int spawnTic;
     private int xOffset;
     private int randomBlock;
 	// Use this for initialization
 	void Start () {
+        spawnDelay = initSpawnDelay;
         spawnTic = 0;
         xOffset = 0;
 	}
@@ -24,6 +26,10 @@ public class BlockSpawner : MonoBehaviour {
             randomBlock = Random.Range(0, block.Length);
             Instantiate(block[randomBlock], new Vector3(xOffset, 10), Quaternion.identity);
             spawnTic = 0;
+            if (spawnDelay >= 10)
+            {
+                spawnDelay--;
+            }
         }
 	}
 }
