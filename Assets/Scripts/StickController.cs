@@ -6,7 +6,7 @@ public class StickController : MonoBehaviour {
     private Animator anim;
     private bool facingRight = true;
     private Rigidbody2D rb2d;
-    public int speed;
+    public float speed;
     public int jumpForce = 200;
 	// Use this for initialization
 	void Start () {

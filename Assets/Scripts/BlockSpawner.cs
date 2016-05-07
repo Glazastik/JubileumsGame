@@ -25,7 +25,7 @@ public class BlockSpawner : MonoBehaviour {
         {
             xOffset = Random.Range(-7, 7);
             randomBlock = Random.Range(0, block.Length);
-            Instantiate(block[randomBlock], new Vector3(xOffset, player.transform.position.y + 20), Quaternion.identity);
+            Instantiate(block[randomBlock], new Vector3(xOffset, player.transform.position.y + 10), Quaternion.identity);
             spawnTic = 0;
             if (spawnDelay >= 10)
             {
