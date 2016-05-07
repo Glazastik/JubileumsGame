@@ -56,13 +56,17 @@ public class StickController : MonoBehaviour {
             Flip();
         }
 
-        if (moveHorizontal == 0)
+        if (moveHorizontal == 0 && grounded)
         {
             anim.SetInteger("state", 0);
         }
-        else
+        else if(moveHorizontal != 0 && grounded)
         {
             anim.SetInteger("state", 1);
+        }
+        else
+        {
+            anim.SetInteger("state", 2);
         }
         if (!dead)
         {
@@ -71,12 +75,10 @@ public class StickController : MonoBehaviour {
         if (player == 1 && Input.GetButtonDown("Jump1") && grounded && !dead || player == 2 && Input.GetButtonDown("Jump2") && grounded && !dead)
         {
             rb2d.AddForce(new Vector2(0, jumpForce));
-            anim.SetInteger("state", 2);
         }
         else if (((player == 1 && Input.GetButtonDown("Jump1")) || (player == 2 && Input.GetButtonDown("Jump2") )) && doubleJ && !dead)
         {
             rb2d.AddForce(new Vector2(0, jumpForce));
-            anim.SetInteger("state", 2);
             doubleJ = false;
         }
 	}
