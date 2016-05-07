@@ -10,22 +10,15 @@ public class StickController : MonoBehaviour {
     public int player;
     public int jumpForce = 200;
 
-    bool doubleJ1 = false;
-    bool doubleJ2 = false;
+    bool doubleJ = false;
 
     //Collision stuff
-    bool dead1 = false;
-    bool dead2 = false;
+    bool dead = false;
 
-    bool headCollision1 = false;
-    bool grounded1 = false;
-    public Transform groundCheck1;
-    public Transform headCheck1;
-
-    bool headCollision2 = false;
-    bool grounded2 = false;
-    public Transform groundCheck2;
-    public Transform headCheck2;
+    bool headCollision = false;
+    bool grounded = false;
+    public Transform groundCheck;
+    public Transform headCheck;
 
     public LayerMask whatIsGround;
     float collisionRadius = 0.1f;
@@ -39,23 +32,14 @@ public class StickController : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
 
-        grounded1 = Physics2D.OverlapCircle(groundCheck1.position, collisionRadius, whatIsGround);
-        headCollision1 = Physics2D.OverlapCircle(headCheck1.position, collisionRadius, whatIsGround);
+        grounded = Physics2D.OverlapCircle(groundCheck.position, collisionRadius, whatIsGround);
+        headCollision = Physics2D.OverlapCircle(headCheck.position, collisionRadius, whatIsGround);
 
-        if (grounded1) doubleJ1 = true;
+        if (grounded) doubleJ = true;
 
-        grounded2 = Physics2D.OverlapCircle(groundCheck2.position, collisionRadius, whatIsGround);
-        headCollision2 = Physics2D.OverlapCircle(headCheck2.position, collisionRadius, whatIsGround);
-
-        if (grounded2) doubleJ2 = true;
-
-        if (grounded1 && headCollision1)
+        if (grounded && headCollision)
         {
-            dead1 = true;
-        }
-        if (grounded2 && headCollision2)
-        {
-            dead2 = true;
+            dead = true;
         }
 
         float moveHorizontal = 0f;
@@ -80,30 +64,20 @@ public class StickController : MonoBehaviour {
         {
             anim.SetInteger("state", 1);
         }
-        if (player == 1 && !dead1)
+        if (!dead)
         {
             rb2d.AddForce(movement.normalized * speed);
         }
-        if (player == 2 && !dead2)
-        {
-            rb2d.AddForce(movement.normalized * speed);
-        }
-        if (player == 1 && Input.GetButtonDown("Jump1") && grounded1 && !dead1 || player == 2 && Input.GetButtonDown("Jump2") && grounded2 && !dead2)
+        if (player == 1 && Input.GetButtonDown("Jump1") && grounded && !dead || player == 2 && Input.GetButtonDown("Jump2") && grounded && !dead)
         {
             rb2d.AddForce(new Vector2(0, jumpForce));
             anim.SetInteger("state", 2);
         }
-        else if (player == 1 && Input.GetButtonDown("Jump1") && doubleJ1 && !dead1)
+        else if (((player == 1 && Input.GetButtonDown("Jump1")) || (player == 2 && Input.GetButtonDown("Jump2") )) && doubleJ && !dead)
         {
             rb2d.AddForce(new Vector2(0, jumpForce));
             anim.SetInteger("state", 2);
-            doubleJ1 = false;
-        }
-        else if (player == 2 && Input.GetButtonDown("Jump2") && doubleJ2 && !dead2)
-        {
-            rb2d.AddForce(new Vector2(0, jumpForce));
-            anim.SetInteger("state", 2);
-            doubleJ2 = false;
+            doubleJ = false;
         }
 	}
 
