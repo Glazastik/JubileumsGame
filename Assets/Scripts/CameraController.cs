@@ -11,12 +11,12 @@ public class CameraController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        pos = Camera.current.WorldToViewportPoint(players[0].position);
+        pos = Camera.main.WorldToViewportPoint(players[0].position);
         if (pos.y > 1)
         {
             var camTrans = Camera.current.transform;
             camTrans.position = new Vector3(camTrans.position.x, camTrans.position.y + 1, camTrans.position.z);
-            Camera.current.transform.position = camTrans.position;
+            Camera.main.transform.position = camTrans.position;
         }
 	}
 }
