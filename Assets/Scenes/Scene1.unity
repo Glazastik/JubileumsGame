@@ -189,6 +189,10 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8ef8be9fa0006ae4483ecd9d6c773f65, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1169534420 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 168784, guid: 8ef8be9fa0006ae4483ecd9d6c773f65, type: 2}
+  m_PrefabInternal: {fileID: 1143201742}
 --- !u!1 &1206073498
 GameObject:
   m_ObjectHideFlags: 0
@@ -243,7 +247,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1206073498}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.15, y: 17, z: 0}
+  m_LocalPosition: {x: 0, y: 17, z: 0}
   m_LocalScale: {x: 3, y: 6, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -373,6 +377,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 11415314, guid: 9541488d979c3a147bdd4ff4422c6fed, type: 2}
+      propertyPath: player.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 428364, guid: 9541488d979c3a147bdd4ff4422c6fed, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0.3526196
@@ -417,6 +425,14 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 11415314, guid: 9541488d979c3a147bdd4ff4422c6fed, type: 2}
+      propertyPath: player.Array.data[0]
+      value: 
+      objectReference: {fileID: 1989206927}
+    - target: {fileID: 11415314, guid: 9541488d979c3a147bdd4ff4422c6fed, type: 2}
+      propertyPath: player.Array.data[1]
+      value: 
+      objectReference: {fileID: 1169534420}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9541488d979c3a147bdd4ff4422c6fed, type: 2}
   m_IsPrefabParent: 0
@@ -493,6 +509,10 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
+--- !u!1 &1989206927 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 168784, guid: 8ef8be9fa0006ae4483ecd9d6c773f65, type: 2}
+  m_PrefabInternal: {fileID: 578259842}
 --- !u!4 &2007801737 stripped
 Transform:
   m_PrefabParentObject: {fileID: 492204, guid: 8ef8be9fa0006ae4483ecd9d6c773f65, type: 2}
