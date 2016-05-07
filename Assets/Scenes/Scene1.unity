@@ -138,7 +138,7 @@ Prefab:
       objectReference: {fileID: 885568119}
     - target: {fileID: 11448016, guid: 79a658316f8e754429e4893c51f74e1c, type: 2}
       propertyPath: whatIsGround.m_Bits
-      value: 4294950909
+      value: 4294966781
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 79a658316f8e754429e4893c51f74e1c, type: 2}
