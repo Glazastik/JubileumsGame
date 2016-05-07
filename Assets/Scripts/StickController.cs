@@ -10,6 +10,9 @@ public class StickController : MonoBehaviour {
     public int player;
     public int jumpForce = 200;
 
+    bool doubleJ1 = false;
+    bool doubleJ2 = false;
+
     //Collision stuff
     bool dead1 = false;
     bool dead2 = false;
@@ -39,8 +42,12 @@ public class StickController : MonoBehaviour {
         grounded1 = Physics2D.OverlapCircle(groundCheck1.position, collisionRadius, whatIsGround);
         headCollision1 = Physics2D.OverlapCircle(headCheck1.position, collisionRadius, whatIsGround);
 
+        if (grounded1) doubleJ1 = true;
+
         grounded2 = Physics2D.OverlapCircle(groundCheck2.position, collisionRadius, whatIsGround);
         headCollision2 = Physics2D.OverlapCircle(headCheck2.position, collisionRadius, whatIsGround);
+
+        if (grounded2) doubleJ2 = true;
 
         if (grounded1 && headCollision1)
         {
@@ -84,6 +91,16 @@ public class StickController : MonoBehaviour {
         if (player == 1 && Input.GetButtonDown("Jump1") && grounded1 && !dead1 || player == 2 && Input.GetButtonDown("Jump2") && grounded2 && !dead2)
         {
             rb2d.AddForce(new Vector2(0, jumpForce));
+        }
+        else if (player == 1 && Input.GetButtonDown("Jump1") && doubleJ1 && !dead1)
+        {
+            rb2d.AddForce(new Vector2(0, jumpForce));
+            doubleJ1 = false;
+        }
+        else if (player == 2 && Input.GetButtonDown("Jump2") && doubleJ2 && !dead2)
+        {
+            rb2d.AddForce(new Vector2(0, jumpForce));
+            doubleJ2 = false;
         }
 	}
 
