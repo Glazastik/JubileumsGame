@@ -11,6 +11,7 @@ public class StickController : MonoBehaviour {
     public int jumpForce = 200;
 
     public GameObject deathParticle;
+    private AudioSource deathSound;
 
     bool doubleJ = false;
 
@@ -30,6 +31,7 @@ public class StickController : MonoBehaviour {
     void Start () {
         anim = this.GetComponent<Animator>();
         rb2d = GetComponent<Rigidbody2D>();
+        deathSound = GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -60,6 +62,7 @@ public class StickController : MonoBehaviour {
             anim.SetBool("Dead", true);
             rb2d.freezeRotation = false;
             rb2d.AddTorque(-10f);
+            deathSound.Play();
         }
         else if (dead)
         {
