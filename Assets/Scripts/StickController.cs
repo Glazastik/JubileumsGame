@@ -10,6 +10,8 @@ public class StickController : MonoBehaviour {
     public int player;
     public int jumpForce = 200;
 
+    public GameObject deathParticle;
+
     bool doubleJ = false;
 
     //Collision stuff
@@ -37,8 +39,9 @@ public class StickController : MonoBehaviour {
 
         if (grounded) doubleJ = true;
 
-        if (grounded && headCollision)
+        if (grounded && headCollision && !dead)
         {
+            Instantiate(deathParticle, transform.position, transform.rotation);
             dead = true;
             anim.SetBool("Dead", true);
         }
