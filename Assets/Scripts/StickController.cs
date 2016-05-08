@@ -80,8 +80,8 @@ public class StickController : MonoBehaviour {
 
     void movePlayer()
     {
-        grounded = Physics2D.OverlapCircle(groundCheck.position, collisionRadius, whatIsGround);
-        headCollision = Physics2D.OverlapCircle(headCheck.position, collisionRadius, whatIsCrush);
+        grounded = Physics2D.OverlapArea(groundCheck.position, new Vector2(groundCheck.position.x + 0.06f, groundCheck.position.y - 0.07f), whatIsGround);
+        headCollision = Physics2D.OverlapArea(headCheck.position, new Vector2(groundCheck.position.x + 0.06f, groundCheck.position.y + 0.05f), whatIsCrush);
 
         if (grounded) doubleJ = true;
 
