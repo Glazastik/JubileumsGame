@@ -25,7 +25,8 @@ public class StickController : MonoBehaviour {
     public Transform playerTag;
 
     public LayerMask whatIsGround;
-    float collisionRadius = 0.1f;
+    public LayerMask whatIsCrush;
+    float collisionRadius = 0.2f;
 
     // Use this for initialization
     void Start () {
@@ -50,7 +51,7 @@ public class StickController : MonoBehaviour {
     void movePlayer()
     {
         grounded = Physics2D.OverlapCircle(groundCheck.position, collisionRadius, whatIsGround);
-        headCollision = Physics2D.OverlapCircle(headCheck.position, collisionRadius, whatIsGround);
+        headCollision = Physics2D.OverlapCircle(headCheck.position, collisionRadius, whatIsCrush);
 
         if (grounded) doubleJ = true;
 

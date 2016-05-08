@@ -187,6 +187,9 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 4294966781
+  whatIsCrush:
+    serializedVersion: 2
+    m_Bits: 4294950399
 --- !u!212 &21220108
 SpriteRenderer:
   m_ObjectHideFlags: 1
