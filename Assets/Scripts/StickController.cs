@@ -49,14 +49,27 @@ public class StickController : MonoBehaviour {
         playerTag.localScale = new Vector2(playerTag.localScale.x * -1, playerTag.localScale.y);
     }
 
-    void movePlayer()
+    void OnTriggerEnter2D(Collider2D other)
     {
         grounded = Physics2D.OverlapCircle(groundCheck.position, collisionRadius, whatIsGround);
         headCollision = Physics2D.OverlapCircle(headCheck.position, headCollisionRadius, whatIsCrush);
 
         if (grounded) doubleJ = true;
 
-        if (grounded && headCollision && !dead)
+        if (other.gameObject.CompareTag("blastzone"))
+        {
+            if (!dead)
+            {
+                Die();
+                rb2d.AddForce(new Vector2(0, 10f));
+            }
+            
+        }
+    }
+
+    void Die()
+    {
+        if (!dead)
         {
             Instantiate(deathParticle, transform.position, transform.rotation);
             dead = true;
@@ -64,6 +77,20 @@ public class StickController : MonoBehaviour {
             rb2d.freezeRotation = false;
             rb2d.AddTorque(-10f);
             deathSound.Play();
+        }
+        
+    }
+
+    void movePlayer()
+    {
+        grounded = Physics2D.OverlapCircle(groundCheck.position, collisionRadius, whatIsGround);
+        headCollision = Physics2D.OverlapCircle(headCheck.position, collisionRadius, whatIsCrush);
+
+        if (grounded) doubleJ = true;
+
+        if (grounded && headCollision && !dead)
+        {
+            Die();
         }
         else if (dead)
         {
