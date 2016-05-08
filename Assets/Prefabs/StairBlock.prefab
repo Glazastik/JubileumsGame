@@ -43,6 +43,7 @@ GameObject:
   - 61: {fileID: 6148372}
   - 50: {fileID: 5081378}
   - 61: {fileID: 6105224}
+  - 61: {fileID: 6159722}
   m_Layer: 13
   m_Name: StairBlock
   m_TagString: Untagged
@@ -145,7 +146,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 155736}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.6617494, y: -7.384343, z: 0}
+  m_LocalPosition: {x: -6.096607, y: -6.4296446, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 408914}
@@ -232,9 +233,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 2, y: 0.5}
+  m_Offset: {x: 2, y: 1}
   serializedVersion: 2
-  m_Size: {x: 1, y: 2}
+  m_Size: {x: 1, y: 3}
 --- !u!61 &6148372
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -249,6 +250,20 @@ BoxCollider2D:
   m_Offset: {x: 1, y: 0}
   serializedVersion: 2
   m_Size: {x: 3, y: 1}
+--- !u!61 &6159722
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 155736}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 1, y: 1}
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
 --- !u!212 &21205560
 SpriteRenderer:
   m_ObjectHideFlags: 1

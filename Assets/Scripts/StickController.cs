@@ -97,7 +97,7 @@ public class StickController : MonoBehaviour {
 
     void movePlayer()
     {
-        grounded = Physics2D.Raycast(groundCheck.position, Vector2.down, 0.5f, whatIsGround);
+        grounded = Physics2D.Raycast(groundCheck.position, Vector2.down, 0.75f, whatIsGround);
         headCollision = Physics2D.Raycast(headCheck.position, Vector2.up, 0.1f, whatIsCrush);
 
         if (grounded) doubleJ = true;
@@ -143,7 +143,14 @@ public class StickController : MonoBehaviour {
 
         if (!dead)
         {
-            rb2d.AddForce(movement.normalized * speed);
+            if (moveHorizontal == 0)
+            {
+                rb2d.velocity = new Vector2(rb2d.velocity.x * 0.95f, rb2d.velocity.y);
+            }
+            else
+            {
+                rb2d.AddForce(movement.normalized * speed);
+            }
         }
 
         if (player == 1 && Input.GetButtonDown("Jump1") && grounded && !dead || player == 2 && Input.GetButtonDown("Jump2") && grounded && !dead)

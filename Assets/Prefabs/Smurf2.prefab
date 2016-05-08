@@ -178,7 +178,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0.25
   player: 2
-  jumpForce: 7
+  jumpForce: 8
   deathParticle: {fileID: 198548, guid: 8d24dcf9e31ef30448f1b28d996e2744, type: 2}
   deathSound: {fileID: 0}
   groundCheck: {fileID: 431646}

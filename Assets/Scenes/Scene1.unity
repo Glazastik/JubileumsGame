@@ -862,7 +862,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 448238, guid: dbd1e1090e4b15c44899ba8bfeee98e1, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11425714, guid: dbd1e1090e4b15c44899ba8bfeee98e1, type: 2}
       propertyPath: deathSound
@@ -1171,7 +1171,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 428364, guid: 9541488d979c3a147bdd4ff4422c6fed, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 11415314, guid: 9541488d979c3a147bdd4ff4422c6fed, type: 2}
       propertyPath: player.Array.data[0]

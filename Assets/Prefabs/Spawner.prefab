@@ -49,7 +49,7 @@ MonoBehaviour:
   - {fileID: 461720, guid: ee3558976be653d4ab30218d043a929d, type: 2}
   - {fileID: 444886, guid: 7222a7877da5f4b46b6ec3f9943d31d1, type: 2}
   - {fileID: 418624, guid: b778ed6bdfe09b940af08e0128817a73, type: 2}
-  initSpawnDelay: 120
+  initSpawnDelay: 90
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
