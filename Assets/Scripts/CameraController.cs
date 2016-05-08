@@ -6,9 +6,11 @@ public class CameraController : MonoBehaviour {
     private Vector3 pos1;
     private Vector3 pos2;
     private Camera cam;
+    private float originalCamsize;
     // Use this for initialization
     void Start () {
         cam = GetComponent<Camera>();
+        originalCamsize = cam.orthographicSize;
 	}
 	
 	// Update is called once per frame
@@ -16,10 +18,13 @@ public class CameraController : MonoBehaviour {
         pos1 = cam.WorldToViewportPoint(players[0].position);
         pos2 = cam.WorldToViewportPoint(players[1].position);
         var camTrans = cam.transform;
-        //Fov doesn't work
-        if (pos1.y < 0.2 && pos2.y > 0.8 || pos2.y < 0.2 && pos1.y > 0.8)
+        if (pos1.y < 0.1 && pos2.y > 0.9 || pos2.y < 0.1 && pos1.y > 0.9 ||pos1.y < 0 || pos2.y < 0)
         {
-            cam.orthographicSize = cam.orthographicSize + 1;
+            cam.orthographicSize = cam.orthographicSize + 0.5f;
+        }
+        else if (cam.orthographicSize > originalCamsize)
+        {
+            cam.orthographicSize = cam.orthographicSize - 0.25f;
         }
         if (pos1.y > 0.8 || pos2.y > 0.8)
         {
