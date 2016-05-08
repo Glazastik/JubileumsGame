@@ -44,10 +44,15 @@ public class StickController : MonoBehaviour {
             Instantiate(deathParticle, transform.position, transform.rotation);
             dead = true;
             anim.SetBool("Dead", true);
+            rb2d.freezeRotation = false;
+        }
+        else if (dead)
+        {
+            return;
         }
 
         float moveHorizontal = 0f;
-        if (player == 1) {
+        if (player == 1 ) {
             moveHorizontal = Input.GetAxis("Horizontal1");
         } else if (player == 2){
             moveHorizontal = Input.GetAxis("Horizontal2");
@@ -72,10 +77,12 @@ public class StickController : MonoBehaviour {
         {
             anim.SetInteger("state", 2);
         }
+
         if (!dead)
         {
             rb2d.AddForce(movement.normalized * speed);
         }
+
         if (player == 1 && Input.GetButtonDown("Jump1") && grounded && !dead || player == 2 && Input.GetButtonDown("Jump2") && grounded && !dead)
         {
             rb2d.velocity = new Vector2(rb2d.velocity.x, 0f);
