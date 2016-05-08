@@ -129,13 +129,13 @@ Prefab:
       value: 
       objectReference: {fileID: 816131183}
     - target: {fileID: 11456314, guid: 79a658316f8e754429e4893c51f74e1c, type: 2}
-      propertyPath: winText
-      value: 
-      objectReference: {fileID: 1696421754}
-    - target: {fileID: 11456314, guid: 79a658316f8e754429e4893c51f74e1c, type: 2}
       propertyPath: heightText
       value: 
       objectReference: {fileID: 482805751}
+    - target: {fileID: 11456314, guid: 79a658316f8e754429e4893c51f74e1c, type: 2}
+      propertyPath: winText
+      value: 
+      objectReference: {fileID: 1696421754}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 79a658316f8e754429e4893c51f74e1c, type: 2}
   m_IsPrefabParent: 0
@@ -869,13 +869,13 @@ Prefab:
       value: 
       objectReference: {fileID: 758897228}
     - target: {fileID: 11425714, guid: dbd1e1090e4b15c44899ba8bfeee98e1, type: 2}
-      propertyPath: winText
-      value: 
-      objectReference: {fileID: 581665122}
-    - target: {fileID: 11425714, guid: dbd1e1090e4b15c44899ba8bfeee98e1, type: 2}
       propertyPath: heightText
       value: 
       objectReference: {fileID: 587330676}
+    - target: {fileID: 11425714, guid: dbd1e1090e4b15c44899ba8bfeee98e1, type: 2}
+      propertyPath: winText
+      value: 
+      objectReference: {fileID: 581665122}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dbd1e1090e4b15c44899ba8bfeee98e1, type: 2}
   m_IsPrefabParent: 0
@@ -1175,7 +1175,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 428364, guid: 9541488d979c3a147bdd4ff4422c6fed, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 11415314, guid: 9541488d979c3a147bdd4ff4422c6fed, type: 2}
       propertyPath: spawnDelay

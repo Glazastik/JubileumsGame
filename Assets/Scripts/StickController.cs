@@ -35,8 +35,6 @@ public class StickController : MonoBehaviour {
 
     public LayerMask whatIsGround;
     public LayerMask whatIsCrush;
-    float collisionRadius = 0.35f;
-    float headCollisionRadius = 0.0125f;
 
     // Use this for initialization
     void Start () {
@@ -99,13 +97,14 @@ public class StickController : MonoBehaviour {
 
     void movePlayer()
     {
-        grounded = Physics2D.OverlapArea(groundCheck.position, new Vector2(groundCheck.position.x + 0.06f, groundCheck.position.y - 0.07f), whatIsGround);
-        headCollision = Physics2D.OverlapArea(headCheck.position, new Vector2(groundCheck.position.x + 0.06f, groundCheck.position.y + 0.05f), whatIsCrush);
+        grounded = Physics2D.Raycast(groundCheck.position, Vector2.down, 0.2f, whatIsGround);
+        headCollision = Physics2D.Raycast(headCheck.position, Vector2.up, 0.1f, whatIsCrush);
 
         if (grounded) doubleJ = true;
 
         if (grounded && headCollision && !dead)
         {
+            Debug.Log("Got crushed");
             StartCoroutine(Die());
         }
         else if (dead)
@@ -148,7 +147,7 @@ public class StickController : MonoBehaviour {
             rb2d.AddForce(movement.normalized * speed);
         }
 
-        if (player == 1 && Input.GetButtonDown("Jump1"))// && grounded && !dead || player == 2 && Input.GetButtonDown("Jump2") && grounded && !dead)
+        if (player == 1 && Input.GetButtonDown("Jump1") && grounded && !dead || player == 2 && Input.GetButtonDown("Jump2") && grounded && !dead)
         {
             rb2d.velocity = new Vector2(rb2d.velocity.x, 0f);
             rb2d.AddForce(new Vector2(0, jumpForce));
