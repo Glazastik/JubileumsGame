@@ -70,7 +70,7 @@ public class StickController : MonoBehaviour {
             dead = true;
             anim.SetBool("Dead", true);
             rb2d.freezeRotation = false;
-            rb2d.AddTorque(-10f);
+            rb2d.AddTorque(-2f);
             deathSound.Play();
             yield return new WaitForSeconds(2f);
             gameObject.SetActive(false);
