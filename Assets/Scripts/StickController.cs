@@ -104,7 +104,6 @@ public class StickController : MonoBehaviour {
 
         if (grounded && headCollision && !dead)
         {
-            Debug.Log("Got crushed");
             StartCoroutine(Die());
         }
         else if (dead)
