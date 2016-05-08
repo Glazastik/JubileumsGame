@@ -7,9 +7,10 @@ public class BlockSpawner : MonoBehaviour {
     public Transform[] block;
     private Transform chosenBlock;
     public int initSpawnDelay;
-    private int spawnDelay;
-    private int spawnTic;
+    private float spawnDelay;
+    private float spawnTic;
     private float xOffset;
+    private float yOffset;
     private int randomBlock;
 	// Use this for initialization
 	void Start () {
@@ -20,10 +21,11 @@ public class BlockSpawner : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        spawnTic++;
-        if (spawnTic == spawnDelay)
+        spawnTic += 1;
+        if (spawnTic >= spawnDelay)
         {
-            xOffset = Random.Range(-7.0f, 7.0f);
+            xOffset = Random.Range(-10.0f, 10.0f);
+            yOffset = Random.Range(0.0f, 10.0f);
             randomBlock = Random.Range(0, block.Length);
             var spawnheight = Mathf.Max(player[0].transform.position.y, player[1].transform.position.y);
             Transform obj = (Transform) Instantiate(block[randomBlock], new Vector3(xOffset, spawnheight + 10), Quaternion.identity);
@@ -31,7 +33,7 @@ public class BlockSpawner : MonoBehaviour {
             spawnTic = 0;
             if (spawnDelay >= 10)
             {
-                spawnDelay--;
+                spawnDelay -= 0.1f;
             }
         }
 	}

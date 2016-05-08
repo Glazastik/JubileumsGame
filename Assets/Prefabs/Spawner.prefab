@@ -9,7 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 428364}
   - 114: {fileID: 11415314}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: Spawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,12 +39,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 095a524011e46f444b0c513c33e02670, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 195484, guid: cfe873d5fc273614aa88ab4dd9a63713, type: 2}
+  player:
+  - {fileID: 0}
+  - {fileID: 0}
   block:
   - {fileID: 495716, guid: b378a4194791f2b47b14058e31485e5f, type: 2}
   - {fileID: 404728, guid: 1208a8b522918a740b8b4d30454f0dbc, type: 2}
   - {fileID: 435356, guid: fe65ee3b78a4e5f43895d5c905066b9a, type: 2}
   - {fileID: 461720, guid: ee3558976be653d4ab30218d043a929d, type: 2}
+  - {fileID: 444886, guid: 7222a7877da5f4b46b6ec3f9943d31d1, type: 2}
   initSpawnDelay: 120
 --- !u!1001 &100100000
 Prefab:
