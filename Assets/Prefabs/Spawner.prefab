@@ -48,6 +48,7 @@ MonoBehaviour:
   - {fileID: 435356, guid: fe65ee3b78a4e5f43895d5c905066b9a, type: 2}
   - {fileID: 461720, guid: ee3558976be653d4ab30218d043a929d, type: 2}
   - {fileID: 444886, guid: 7222a7877da5f4b46b6ec3f9943d31d1, type: 2}
+  - {fileID: 418624, guid: b778ed6bdfe09b940af08e0128817a73, type: 2}
   initSpawnDelay: 120
 --- !u!1001 &100100000
 Prefab:

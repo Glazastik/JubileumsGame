@@ -122,7 +122,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 499798, guid: 79a658316f8e754429e4893c51f74e1c, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 11456314, guid: 79a658316f8e754429e4893c51f74e1c, type: 2}
       propertyPath: deathSound
@@ -862,7 +862,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 448238, guid: dbd1e1090e4b15c44899ba8bfeee98e1, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 11425714, guid: dbd1e1090e4b15c44899ba8bfeee98e1, type: 2}
       propertyPath: deathSound
@@ -937,8 +937,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1206073498}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 19, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 1}
+  m_LocalPosition: {x: 0, y: 92.2, z: 0}
+  m_LocalScale: {x: 10, y: 20, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
@@ -1020,7 +1020,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 26.493216
+  orthographic size: 9.716682
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1171,7 +1171,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 428364, guid: 9541488d979c3a147bdd4ff4422c6fed, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 11415314, guid: 9541488d979c3a147bdd4ff4422c6fed, type: 2}
       propertyPath: player.Array.data[0]

@@ -97,7 +97,7 @@ public class StickController : MonoBehaviour {
 
     void movePlayer()
     {
-        grounded = Physics2D.Raycast(groundCheck.position, Vector2.down, 0.2f, whatIsGround);
+        grounded = Physics2D.Raycast(groundCheck.position, Vector2.down, 0.5f, whatIsGround);
         headCollision = Physics2D.Raycast(headCheck.position, Vector2.up, 0.1f, whatIsCrush);
 
         if (grounded) doubleJ = true;
