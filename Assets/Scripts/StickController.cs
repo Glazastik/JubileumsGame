@@ -21,6 +21,7 @@ public class StickController : MonoBehaviour {
     bool grounded = false;
     public Transform groundCheck;
     public Transform headCheck;
+    public Transform playerTag;
 
     public LayerMask whatIsGround;
     float collisionRadius = 0.1f;
@@ -42,6 +43,7 @@ public class StickController : MonoBehaviour {
         Vector3 theScale = transform.localScale;
         theScale.x *= -1;
         transform.localScale = theScale;
+        playerTag.localScale = new Vector2(playerTag.localScale.x * -1, playerTag.localScale.y);
     }
 
     void movePlayer()
