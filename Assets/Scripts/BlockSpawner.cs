@@ -9,7 +9,7 @@ public class BlockSpawner : MonoBehaviour {
     public int initSpawnDelay;
     private int spawnDelay;
     private int spawnTic;
-    private int xOffset;
+    private float xOffset;
     private int randomBlock;
 	// Use this for initialization
 	void Start () {
@@ -23,9 +23,10 @@ public class BlockSpawner : MonoBehaviour {
         spawnTic++;
         if (spawnTic == spawnDelay)
         {
-            xOffset = Random.Range(-7, 7);
+            xOffset = Random.Range(-7.0f, 7.0f);
             randomBlock = Random.Range(0, block.Length);
-            Instantiate(block[randomBlock], new Vector3(xOffset, player[0].transform.position.y + 10), Quaternion.identity);
+            Transform obj = (Transform) Instantiate(block[randomBlock], new Vector3(xOffset, player[0].transform.position.y + 10), Quaternion.identity);
+            obj.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, -1f);
             spawnTic = 0;
             if (spawnDelay >= 10)
             {
