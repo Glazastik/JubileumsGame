@@ -59,6 +59,10 @@ public class StickController : MonoBehaviour {
                 rb2d.velocity = new Vector2(0f, 0f);
                 rb2d.AddForce(new Vector2(0, 10f));
             }
+            else
+            {
+                gameObject.SetActive(false);
+            }
         }
     }
 
