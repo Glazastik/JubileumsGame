@@ -13,6 +13,7 @@ public class StickController : MonoBehaviour {
 
     public GameObject deathParticle;
     public AudioSource deathSound;
+    public AudioSource jump;
 
     bool doubleJ = false;
 
@@ -181,12 +182,16 @@ public class StickController : MonoBehaviour {
         {
             rb2d.velocity = new Vector2(rb2d.velocity.x, 0f);
             rb2d.AddForce(new Vector2(0, jumpForce));
+            jump.pitch = 1;
+            jump.Play();
         }
         else if (((player == 1 && Input.GetButtonDown("Jump1")) || (player == 2 && Input.GetButtonDown("Jump2"))) && doubleJ && !dead)
         {
             rb2d.velocity = new Vector2(rb2d.velocity.x, 0f);
             rb2d.AddForce(new Vector2(0, jumpForce));
             doubleJ = false;
+            jump.pitch = 1.4f;
+            jump.Play();
         }
 
         height = Mathf.Floor(groundCheck.position.y)+10;
