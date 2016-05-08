@@ -15,25 +15,38 @@ public class RoundSystem : MonoBehaviour {
 	void Start () {
 
 	}
-	
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            player1.clearWins();
+            player2.clearWins();
+            StartCoroutine(NewGame(0.2f));
+        }
+    }
+
 	// Update is called once per frame
 	void LateUpdate () {
 
         if (done)
         {
+            if (player1.isDead() && player2.isDead())
+            {
+                StartCoroutine(NewGame(3f));
+            }
+            return;
             return;
         }
 
         if (player1.isDead())
         {
             player2.addWin();
-            StartCoroutine(NewGame());
             done = true;
         }
         else if (player2.isDead())
         {
             player1.addWin();
-            StartCoroutine(NewGame());
             done = true;
         }
         else
@@ -43,9 +56,9 @@ public class RoundSystem : MonoBehaviour {
 
 	}
 
-    IEnumerator NewGame()
+    IEnumerator NewGame(float wait)
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(wait);
 
         blockSpawner.Reset();
         cameraController.Reset();
