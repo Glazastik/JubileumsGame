@@ -140,7 +140,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 88659460}
   - 61: {fileID: 88659459}
-  - 114: {fileID: 88659461}
   - 50: {fileID: 88659462}
   m_Layer: 13
   m_Name: Blastzone
@@ -175,17 +174,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
---- !u!114 &88659461
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 88659458}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8eaac6f5655ed274a9f402cbf5e73e2d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!50 &88659462
 Rigidbody2D:
   serializedVersion: 2
