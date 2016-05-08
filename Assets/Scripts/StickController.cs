@@ -33,7 +33,19 @@ public class StickController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
+        movePlayer();
+	}
 
+    void Flip()
+    {
+        facingRight = !facingRight;
+        Vector3 theScale = transform.localScale;
+        theScale.x *= -1;
+        transform.localScale = theScale;
+    }
+
+    void movePlayer()
+    {
         grounded = Physics2D.OverlapCircle(groundCheck.position, collisionRadius, whatIsGround);
         headCollision = Physics2D.OverlapCircle(headCheck.position, collisionRadius, whatIsGround);
 
@@ -53,12 +65,15 @@ public class StickController : MonoBehaviour {
         }
 
         float moveHorizontal = 0f;
-        if (player == 1 ) {
+        if (player == 1)
+        {
             moveHorizontal = Input.GetAxis("Horizontal1");
-        } else if (player == 2){
+        }
+        else if (player == 2)
+        {
             moveHorizontal = Input.GetAxis("Horizontal2");
         }
-        
+
         Vector2 movement = new Vector2(moveHorizontal, 0);
 
         if ((moveHorizontal < 0 && facingRight) || (moveHorizontal > 0 && !facingRight))
@@ -70,7 +85,7 @@ public class StickController : MonoBehaviour {
         {
             anim.SetInteger("state", 0);
         }
-        else if(moveHorizontal != 0 && grounded)
+        else if (moveHorizontal != 0 && grounded)
         {
             anim.SetInteger("state", 1);
         }
@@ -89,19 +104,13 @@ public class StickController : MonoBehaviour {
             rb2d.velocity = new Vector2(rb2d.velocity.x, 0f);
             rb2d.AddForce(new Vector2(0, jumpForce));
         }
-        else if (((player == 1 && Input.GetButtonDown("Jump1")) || (player == 2 && Input.GetButtonDown("Jump2") )) && doubleJ && !dead)
+        else if (((player == 1 && Input.GetButtonDown("Jump1")) || (player == 2 && Input.GetButtonDown("Jump2"))) && doubleJ && !dead)
         {
             rb2d.velocity = new Vector2(rb2d.velocity.x, 0f);
             rb2d.AddForce(new Vector2(0, jumpForce));
             doubleJ = false;
         }
-	}
-
-    void Flip()
-    {
-        facingRight = !facingRight;
-        Vector3 theScale = transform.localScale;
-        theScale.x *= -1;
-        transform.localScale = theScale;
     }
+
+    
 }
