@@ -17,16 +17,16 @@ public class CameraController : MonoBehaviour {
         pos2 = cam.WorldToViewportPoint(players[1].position);
         var camTrans = cam.transform;
         //Fov doesn't work
-        if (pos1.y < 0 || pos1.y < 0 || pos2.y > 1 || pos2.y > 1)
+        if (pos1.y < 0.2 && pos2.y > 0.8 || pos2.y < 0.2 && pos1.y > 0.8)
         {
-            cam.fieldOfView += 1;
+            cam.orthographicSize = cam.orthographicSize + 1;
         }
         if (pos1.y > 0.8 || pos2.y > 0.8)
         {
             camTrans.position = new Vector3(camTrans.position.x, camTrans.position.y + 0.1f, camTrans.position.z);
             cam.transform.position = camTrans.position;
         }
-        else if (pos1.y < 0.2 ||pos1.y < 0.2)
+        else if (pos1.y < 0.2 ||pos2.y < 0.2)
         {
             camTrans.position = new Vector3(camTrans.position.x, camTrans.position.y - 0.1f, camTrans.position.z);
             cam.transform.position = camTrans.position;
