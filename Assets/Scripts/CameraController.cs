@@ -7,6 +7,7 @@ public class CameraController : MonoBehaviour {
     private Vector3 pos2;
     private Camera cam;
     private float originalCamsize;
+    private int zoomDelay = 180;
     // Use this for initialization
     void Start () {
         cam = GetComponent<Camera>();
@@ -20,13 +21,14 @@ public class CameraController : MonoBehaviour {
         var camTrans = cam.transform;
         if (pos1.y < 0.1 && pos2.y > 0.9 || pos2.y < 0.1 && pos1.y > 0.9 ||pos1.y < 0 || pos2.y < 0)
         {
-            cam.orthographicSize = cam.orthographicSize + 0.5f;
+            cam.orthographicSize = cam.orthographicSize + 0.25f;
+            zoomDelay = 180;
         }
-        else if (cam.orthographicSize > originalCamsize)
+        else if (cam.orthographicSize > originalCamsize && zoomDelay == 0)
         {
             cam.orthographicSize = cam.orthographicSize - 0.25f;
         }
-        if (pos1.y > 0.8 || pos2.y > 0.8)
+        else if (pos1.y > 0.8 || pos2.y > 0.8)
         {
             camTrans.position = new Vector3(camTrans.position.x, camTrans.position.y + 0.1f, camTrans.position.z);
             cam.transform.position = camTrans.position;
@@ -36,5 +38,9 @@ public class CameraController : MonoBehaviour {
             camTrans.position = new Vector3(camTrans.position.x, camTrans.position.y - 0.1f, camTrans.position.z);
             cam.transform.position = camTrans.position;
         }
-	}
+        else
+        {
+            zoomDelay--;
+        }
+    }
 }

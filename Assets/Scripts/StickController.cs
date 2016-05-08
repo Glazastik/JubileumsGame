@@ -26,8 +26,8 @@ public class StickController : MonoBehaviour {
 
     public LayerMask whatIsGround;
     public LayerMask whatIsCrush;
-    float collisionRadius = 0.3f;
-    float headCollisionRadius = 0.1f;
+    float collisionRadius = 0.35f;
+    float headCollisionRadius = 0.0125f;
 
     // Use this for initialization
     void Start () {
@@ -132,7 +132,7 @@ public class StickController : MonoBehaviour {
             rb2d.AddForce(movement.normalized * speed);
         }
 
-        if (player == 1 && Input.GetButtonDown("Jump1") && grounded && !dead || player == 2 && Input.GetButtonDown("Jump2") && grounded && !dead)
+        if (player == 1 && Input.GetButtonDown("Jump1"))// && grounded && !dead || player == 2 && Input.GetButtonDown("Jump2") && grounded && !dead)
         {
             rb2d.velocity = new Vector2(rb2d.velocity.x, 0f);
             rb2d.AddForce(new Vector2(0, jumpForce));
