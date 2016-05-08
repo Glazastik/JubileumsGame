@@ -65,6 +65,11 @@ public class StickController : MonoBehaviour {
         wins++;
     }
 
+    public void clearWins()
+    {
+        wins = 0;
+    }
+
 	// Update is called once per frame
 	void FixedUpdate () {
         movePlayer();
