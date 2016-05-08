@@ -55,18 +55,14 @@ public class StickController : MonoBehaviour {
         {
             if (!dead)
             {
-                Die();
+                StartCoroutine(Die());
                 rb2d.velocity = new Vector2(0f, 0f);
                 rb2d.AddForce(new Vector2(0, 10f));
-            }
-            else
-            {
-                gameObject.SetActive(false);
             }
         }
     }
 
-    void Die()
+    IEnumerator Die()
     {
         if (!dead)
         {
@@ -76,6 +72,8 @@ public class StickController : MonoBehaviour {
             rb2d.freezeRotation = false;
             rb2d.AddTorque(-10f);
             deathSound.Play();
+            yield return new WaitForSeconds(2f);
+            gameObject.SetActive(false);
         }
         
     }
@@ -89,7 +87,7 @@ public class StickController : MonoBehaviour {
 
         if (grounded && headCollision && !dead)
         {
-            Die();
+            StartCoroutine(Die());
         }
         else if (dead)
         {
