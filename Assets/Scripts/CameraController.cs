@@ -48,4 +48,10 @@ public class CameraController : MonoBehaviour {
             zoomDelay--;
         }
     }
+
+    public void Reset()
+    {
+        cam.transform.position = new Vector3(0, -2, -10);
+        cam.orthographicSize = originalCamsize;
+    }
 }

@@ -6,6 +6,8 @@ public class RoundSystem : MonoBehaviour {
     public StickController player1;
     public StickController player2;
     public BlockSpawner blockSpawner;
+    public GameObject BlastZone;
+    public CameraController cameraController;
 
     private bool done = false;
 
@@ -46,6 +48,7 @@ public class RoundSystem : MonoBehaviour {
         yield return new WaitForSeconds(3f);
 
         blockSpawner.Reset();
+        cameraController.Reset();
         player1.reset();
         player2.reset();
         done = false;
