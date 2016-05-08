@@ -3,6 +3,7 @@ using System.Collections;
 
 public class CameraController : MonoBehaviour {
     public Transform[] players;
+    public GameObject bz;
     private Vector3 pos1;
     private Vector3 pos2;
     private Camera cam;
@@ -31,10 +32,11 @@ public class CameraController : MonoBehaviour {
         {
             cam.orthographicSize = cam.orthographicSize - 0.25f;
         }
-        else if (pos1.y > 0.8 || pos2.y > 0.8)
+        else if (pos1.y > 0.75 || pos2.y > 0.75)
         {
-            camTrans.position = new Vector3(camTrans.position.x, camTrans.position.y + 0.2f, camTrans.position.z);
+            camTrans.position = new Vector3(camTrans.position.x, camTrans.position.y + 0.125f, camTrans.position.z);
             cam.transform.position = camTrans.position;
+            bz.transform.position = new Vector3(bz.transform.position.x, bz.transform.position.y + 0.0675f, bz.transform.position.z);
         }
         /*else if (pos1.y < 0.2 && pa1 ||pos2.y < 0.2 && pa2)
         {

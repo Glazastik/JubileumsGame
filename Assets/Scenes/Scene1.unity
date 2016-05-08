@@ -655,6 +655,7 @@ MonoBehaviour:
   players:
   - {fileID: 633638919}
   - {fileID: 2007801737}
+  bz: {fileID: 88659458}
 --- !u!1001 &1484150900
 Prefab:
   m_ObjectHideFlags: 0
