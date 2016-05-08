@@ -44,9 +44,10 @@ public class RoundSystem : MonoBehaviour {
     IEnumerator NewGame()
     {
         yield return new WaitForSeconds(3f);
+
+        blockSpawner.Reset();
         player1.reset();
         player2.reset();
-        blockSpawner.Reset();
         done = false;
     }
 }
