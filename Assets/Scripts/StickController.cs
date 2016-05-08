@@ -45,6 +45,7 @@ public class StickController : MonoBehaviour {
             dead = true;
             anim.SetBool("Dead", true);
             rb2d.freezeRotation = false;
+            rb2d.AddTorque(-10f);
         }
         else if (dead)
         {
