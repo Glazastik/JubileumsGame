@@ -25,9 +25,10 @@ public class StickController : MonoBehaviour {
     public Transform headCheck;
 
     public Transform playerTag;
+    private Vector2 startPos;
 
-    private int wins;
-    private float height;
+    private int wins = 0;
+    private float height = 0;
     private float heightRecord = 0;
     public Text heightText;
     public Text winText;
@@ -40,8 +41,30 @@ public class StickController : MonoBehaviour {
     void Start () {
         anim = this.GetComponent<Animator>();
         rb2d = GetComponent<Rigidbody2D>();
+        startPos = transform.position;
 	}
-	
+
+    public void reset()
+    {
+        transform.position = startPos;
+        transform.rotation = Quaternion.identity;
+        rb2d.velocity = new Vector2(0, 0);
+        gameObject.SetActive(true);
+        rb2d.freezeRotation = true;
+        dead = false;
+        anim.SetBool("Dead", false);
+    }
+
+    public bool isDead()
+    {
+        return dead;
+    }
+
+    public void addWin()
+    {
+        wins++;
+    }
+
 	// Update is called once per frame
 	void FixedUpdate () {
         movePlayer();
@@ -49,7 +72,8 @@ public class StickController : MonoBehaviour {
 
     void LateUpdate()
     {
-        updateHeight();
+        winText.text = "Wins: " + wins;
+        heightText.text = "Height: " + height + " / " + heightRecord;
     }
 
     void Flip()
@@ -59,11 +83,6 @@ public class StickController : MonoBehaviour {
         theScale.x *= -1;
         transform.localScale = theScale;
         playerTag.localScale = new Vector2(playerTag.localScale.x * -1, playerTag.localScale.y);
-    }
-
-    void updateHeight()
-    {
-        heightText.text = "Height: " + height + " / " + heightRecord;
     }
 
     void OnTriggerEnter2D(Collider2D other)
