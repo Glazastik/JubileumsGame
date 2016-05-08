@@ -51,19 +51,14 @@ public class StickController : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        grounded = Physics2D.OverlapCircle(groundCheck.position, collisionRadius, whatIsGround);
-        headCollision = Physics2D.OverlapCircle(headCheck.position, headCollisionRadius, whatIsCrush);
-
-        if (grounded) doubleJ = true;
-
         if (other.gameObject.CompareTag("blastzone"))
         {
             if (!dead)
             {
                 Die();
+                rb2d.velocity = new Vector2(0f, 0f);
                 rb2d.AddForce(new Vector2(0, 10f));
             }
-            
         }
     }
 
