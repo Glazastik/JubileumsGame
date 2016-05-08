@@ -11,7 +11,7 @@ public class StickController : MonoBehaviour {
     public int jumpForce = 200;
 
     public GameObject deathParticle;
-    private AudioSource deathSound;
+    public AudioSource deathSound;
 
     bool doubleJ = false;
 
@@ -31,7 +31,6 @@ public class StickController : MonoBehaviour {
     void Start () {
         anim = this.GetComponent<Animator>();
         rb2d = GetComponent<Rigidbody2D>();
-        deathSound = GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
