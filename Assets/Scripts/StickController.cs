@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class StickController : MonoBehaviour {
 
@@ -22,7 +23,15 @@ public class StickController : MonoBehaviour {
     bool grounded = false;
     public Transform groundCheck;
     public Transform headCheck;
+
     public Transform playerTag;
+
+    private int wins;
+    private float height;
+    private float heightRecord = 0;
+    public Text heightText;
+    public Text winText;
+
 
     public LayerMask whatIsGround;
     public LayerMask whatIsCrush;
@@ -40,6 +49,11 @@ public class StickController : MonoBehaviour {
         movePlayer();
 	}
 
+    void LateUpdate()
+    {
+        updateHeight();
+    }
+
     void Flip()
     {
         facingRight = !facingRight;
@@ -47,6 +61,11 @@ public class StickController : MonoBehaviour {
         theScale.x *= -1;
         transform.localScale = theScale;
         playerTag.localScale = new Vector2(playerTag.localScale.x * -1, playerTag.localScale.y);
+    }
+
+    void updateHeight()
+    {
+        heightText.text = "Height: " + height + " / " + heightRecord;
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -139,6 +158,12 @@ public class StickController : MonoBehaviour {
             rb2d.velocity = new Vector2(rb2d.velocity.x, 0f);
             rb2d.AddForce(new Vector2(0, jumpForce));
             doubleJ = false;
+        }
+
+        height = Mathf.Floor(groundCheck.position.y)+10;
+        if (height > heightRecord)
+        {
+            heightRecord = height;
         }
     }
 
