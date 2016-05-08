@@ -144,7 +144,7 @@ GameObject:
   - 50: {fileID: 88659462}
   m_Layer: 13
   m_Name: Blastzone
-  m_TagString: Untagged
+  m_TagString: blastzone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
