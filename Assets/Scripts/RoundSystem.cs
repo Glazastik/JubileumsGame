@@ -36,7 +36,6 @@ public class RoundSystem : MonoBehaviour {
                 StartCoroutine(NewGame(3f));
             }
             return;
-            return;
         }
 
         if (player1.isDead())
