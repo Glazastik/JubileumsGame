@@ -25,7 +25,8 @@ public class BlockSpawner : MonoBehaviour {
         {
             xOffset = Random.Range(-7.0f, 7.0f);
             randomBlock = Random.Range(0, block.Length);
-            Transform obj = (Transform) Instantiate(block[randomBlock], new Vector3(xOffset, player[0].transform.position.y + 10), Quaternion.identity);
+            var spawnheight = Mathf.Max(player[0].transform.position.y, player[1].transform.position.y);
+            Transform obj = (Transform) Instantiate(block[randomBlock], new Vector3(xOffset, spawnheight + 10), Quaternion.identity);
             obj.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, -1f);
             spawnTic = 0;
             if (spawnDelay >= 10)
